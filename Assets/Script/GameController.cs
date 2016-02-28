@@ -18,8 +18,11 @@ public class GameController : MonoBehaviour {
 	public Text scoreLabel;
 	public Text stateLabel;
 
+	private FluctInterstitial interstitial;
+
 	void Start() {
 		Ready ();
+		interstitial = gameObject.AddComponent<FluctInterstitial>();
 	}
 
 	void LateUpdate() {
@@ -70,6 +73,8 @@ public class GameController : MonoBehaviour {
 
 		stateLabel.gameObject.SetActive (true);
 		stateLabel.text = "Game Over";
+
+		interstitial.ShowInterstitial("0000004738");
 	}
 
 	void Reload() {
